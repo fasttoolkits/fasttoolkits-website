@@ -1,7 +1,11 @@
 function Footer() {
   return (
-    <footer className="footer footer-center border-t border-base-200 bg-white p-6 text-[#64748B]">
-      <p>&copy; {new Date().getFullYear()} FastToolKits. Fast, free tools for everyday life.</p>
+    <footer className="border-t border-base-300 bg-base-100">
+      <div className="mx-auto max-w-6xl px-4 py-8 text-center sm:px-8">
+        <p className="text-sm text-muted">
+          &copy; {new Date().getFullYear()} FastToolKits. Fast, free tools for everyday life.
+        </p>
+      </div>
     </footer>
   )
 }

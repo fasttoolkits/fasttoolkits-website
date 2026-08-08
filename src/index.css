@@ -1,2 +1,56 @@
 @import "tailwindcss";
-@plugin "daisyui";
+
+@plugin "daisyui" {
+  themes: fasttoolkits --default;
+}
+
+@plugin "daisyui/theme" {
+  name: "fasttoolkits";
+  default: true;
+  color-scheme: light;
+  --color-base-100: #ffffff;
+  --color-base-200: #f8fafc;
+  --color-base-300: #e2e8f0;
+  --color-base-content: #1e293b;
+  --color-primary: #2563eb;
+  --color-primary-content: #ffffff;
+  --color-secondary: #2563eb;
+  --color-secondary-content: #ffffff;
+  --color-accent: #2563eb;
+  --color-accent-content: #ffffff;
+  --color-neutral: #1e293b;
+  --color-neutral-content: #ffffff;
+  --color-info: #2563eb;
+  --color-info-content: #ffffff;
+  --color-success: #10b981;
+  --color-success-content: #064e3b;
+  --color-warning: #f59e0b;
+  --color-warning-content: #451a03;
+  --color-error: #ef4444;
+  --color-error-content: #7f1d1d;
+  --radius-selector: 0.5rem;
+  --radius-field: 0.5rem;
+  --radius-box: 0.625rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+}
+
+/*
+ * Mirrors the daisyUI theme tokens above as Tailwind theme colors so
+ * utilities like bg-primary/10 or ring-primary/30 (opacity modifiers)
+ * work, since daisyUI's own plugin colors don't support that syntax.
+ */
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  --color-base-100: #ffffff;
+  --color-base-200: #f8fafc;
+  --color-base-300: #e2e8f0;
+  --color-base-content: #1e293b;
+  --color-primary: #2563eb;
+  --color-primary-content: #ffffff;
+  --color-muted: #64748b;
+}

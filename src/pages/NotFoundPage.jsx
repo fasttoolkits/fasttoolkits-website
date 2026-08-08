@@ -6,11 +6,11 @@ function NotFoundPage() {
 
   return (
     <div className="flex flex-col items-center gap-4 px-4 py-24 text-center">
-      <h1 className="text-4xl font-bold text-[#1E293B]">404 — Page Not Found</h1>
-      <p className="text-[#64748B]">
+      <h1 className="text-4xl font-bold text-base-content">404 — Page Not Found</h1>
+      <p className="text-muted">
         The page you&apos;re looking for doesn&apos;t exist or hasn&apos;t been built yet.
       </p>
-      <Link to="/" className="btn btn-primary rounded-xl">
+      <Link to="/" className="btn btn-primary">
         Back to Home
       </Link>
     </div>

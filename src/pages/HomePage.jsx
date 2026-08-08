@@ -5,6 +5,8 @@ import ToolCard from '../components/ToolCard'
 import SearchBar from '../components/SearchBar'
 import CategoryFilter from '../components/CategoryFilter'
 
+const POPULAR_TOOL_NAMES = ['BMI Calculator', 'Word Counter', 'Password Generator', 'Unit Converter']
+
 function HomePage() {
   usePageTitle(
     'FastToolKits — Fast, free tools for everyday life',
@@ -14,8 +16,10 @@ function HomePage() {
   const [searchTerm, setSearchTerm] = useState('')
   const [activeCategory, setActiveCategory] = useState('All')
 
-  const categories = useMemo(
-    () => [...new Set(tools.map((tool) => tool.category))].sort(),
+  const categories = useMemo(() => [...new Set(tools.map((tool) => tool.category))].sort(), [])
+
+  const popularTools = useMemo(
+    () => tools.filter((tool) => POPULAR_TOOL_NAMES.includes(tool.name)),
     []
   )
 
@@ -33,35 +37,81 @@ function HomePage() {
     })
   }, [searchTerm, activeCategory])
 
+  const handlePopularSelect = (toolName) => {
+    setActiveCategory('All')
+    setSearchTerm(toolName)
+    document.getElementById('tools')?.scrollIntoView({ behavior: 'smooth' })
+  }
+
+  const handleClearFilters = () => {
+    setSearchTerm('')
+    setActiveCategory('All')
+  }
+
   return (
     <div>
-      <section className="px-4 py-12 text-center sm:px-8">
-        <h1 className="text-4xl font-bold text-[#1E293B]">FastToolKits</h1>
-        <p className="mt-2 text-lg text-[#64748B]">
-          Fast, free tools for everyday life. No sign-up. No downloads.
+      <section className="px-4 py-14 text-center sm:px-8 sm:py-20">
+        <h1 className="mx-auto max-w-2xl text-3xl font-bold tracking-tight text-base-content sm:text-4xl">
+          Fast, free tools for everyday tasks
+        </h1>
+        <p className="mx-auto mt-3 max-w-xl text-base text-muted sm:text-lg">
+          Simple calculators and utilities that run right in your browser. No sign-up, no
+          downloads, no waiting.
         </p>
+
+        <div className="mt-8 flex justify-center">
+          <SearchBar value={searchTerm} onChange={setSearchTerm} />
+        </div>
+
+        {popularTools.length > 0 && (
+          <div className="mx-auto mt-4 flex max-w-xl flex-wrap items-center justify-center gap-x-1 gap-y-2 text-sm">
+            <span className="mr-1 text-muted">Popular:</span>
+            {popularTools.map((tool) => (
+              <button
+                key={tool.path}
+                type="button"
+                onClick={() => handlePopularSelect(tool.name)}
+                className="rounded-full px-2 py-1 font-medium text-primary transition-colors hover:bg-primary/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+              >
+                {tool.name}
+              </button>
+            ))}
+          </div>
+        )}
       </section>
 
-      <section className="flex flex-col items-center gap-4 px-4 pb-8 sm:px-8">
-        <SearchBar value={searchTerm} onChange={setSearchTerm} />
-        <CategoryFilter
-          categories={categories}
-          activeCategory={activeCategory}
-          onSelect={setActiveCategory}
-        />
+      <section className="px-4 pb-10 sm:px-8">
+        <h2 className="sr-only">Browse by category</h2>
+        <CategoryFilter categories={categories} activeCategory={activeCategory} onSelect={setActiveCategory} />
       </section>
 
-      <section className="px-4 pb-12 sm:px-8">
+      <section id="tools" className="scroll-mt-20 px-4 pb-16 sm:px-8">
+        <div className="mx-auto mb-6 flex max-w-6xl items-baseline justify-between">
+          <h2 className="text-lg font-semibold text-base-content">
+            {activeCategory === 'All' ? 'All tools' : activeCategory}
+          </h2>
+          <span className="text-sm text-muted">
+            {filteredTools.length} {filteredTools.length === 1 ? 'tool' : 'tools'}
+          </span>
+        </div>
+
         {filteredTools.length > 0 ? (
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mx-auto grid max-w-6xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {filteredTools.map((tool) => (
               <ToolCard key={tool.path} tool={tool} />
             ))}
           </div>
         ) : (
-          <p className="text-center text-[#64748B]">
-            No tools match your search. Try a different keyword or category.
-          </p>
+          <div className="mx-auto flex max-w-6xl flex-col items-center gap-3 py-12 text-center">
+            <p className="text-muted">No tools match your search. Try a different keyword or category.</p>
+            <button
+              type="button"
+              onClick={handleClearFilters}
+              className="text-sm font-medium text-primary hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+            >
+              Clear search and filters
+            </button>
+          </div>
         )}
       </section>
     </div>
