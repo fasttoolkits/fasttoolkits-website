@@ -6,8 +6,11 @@ import ToolResult from '../../components/tools/ToolResult'
 import ToolInfo from '../../components/tools/ToolInfo'
 import PillToggle from '../../components/tools/PillToggle'
 import { HEIGHT_UNITS, WEIGHT_UNITS, calculateBmi } from '../../tools/bmi/bmiCalculator'
+import { buildToolStructuredData } from '../../utils/structuredData'
+import { trackToolUsage } from '../../utils/analytics'
 
 const tool = tools.find((item) => item.path === '/bmi-calculator')
+const structuredData = buildToolStructuredData(tool)
 
 const initialFormState = {
   heightUnit: HEIGHT_UNITS.CM,
@@ -23,7 +26,8 @@ const initialErrors = { height: '', weight: '' }
 function BmiCalculatorPage() {
   usePageTitle(
     `${tool.name} | FastToolKits`,
-    'Free BMI calculator: enter your height and weight in metric or imperial units to instantly get your Body Mass Index and see which BMI category you fall into.'
+    'Free BMI calculator: enter your height and weight in metric or imperial units to instantly get your Body Mass Index and see which BMI category you fall into.',
+    { structuredData }
   )
 
   const [form, setForm] = useState(initialFormState)
@@ -60,6 +64,7 @@ function BmiCalculatorPage() {
 
     setErrors(initialErrors)
     setResult({ bmi, category })
+    trackToolUsage(tool)
   }
 
   const handleReset = () => {

@@ -1,20 +1,28 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import usePageTitle from '../hooks/usePageTitle'
 import tools from '../data/tools'
+import { SITE_DESCRIPTION } from '../data/siteConfig'
+import { buildWebsiteStructuredData } from '../utils/structuredData'
 import ToolCard from '../components/ToolCard'
 import SearchBar from '../components/SearchBar'
 import CategoryFilter from '../components/CategoryFilter'
 
 const POPULAR_TOOL_NAMES = ['BMI Calculator', 'Word Counter', 'Password Generator', 'Unit Converter']
+const homeStructuredData = buildWebsiteStructuredData()
 
 function HomePage() {
-  usePageTitle(
-    'FastToolKits | Fast, free tools for everyday life',
-    'Free online calculators and utilities for everyday life. No sign-up, no downloads. Get a quick result in seconds.'
-  )
+  usePageTitle('FastToolKits | Fast, free tools for everyday life', SITE_DESCRIPTION, {
+    structuredData: homeStructuredData,
+  })
 
   const [searchTerm, setSearchTerm] = useState('')
   const [activeCategory, setActiveCategory] = useState('All')
+
+  useEffect(() => {
+    if (window.location.hash === '#tools') {
+      document.getElementById('tools')?.scrollIntoView({ behavior: 'smooth' })
+    }
+  }, [])
 
   const categories = useMemo(() => [...new Set(tools.map((tool) => tool.category))].sort(), [])
 

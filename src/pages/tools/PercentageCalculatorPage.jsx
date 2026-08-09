@@ -12,8 +12,11 @@ import {
   calculatePercentChange,
   formatNumber,
 } from '../../tools/percentage/percentageCalculator'
+import { buildToolStructuredData } from '../../utils/structuredData'
+import { trackToolUsage } from '../../utils/analytics'
 
 const tool = tools.find((item) => item.path === '/percentage-calculator')
+const structuredData = buildToolStructuredData(tool)
 
 const MODE_OPTIONS = [
   { value: PERCENTAGE_MODES.OF, label: 'What is X% of Y?' },
@@ -42,7 +45,8 @@ const initialErrors = {
 function PercentageCalculatorPage() {
   usePageTitle(
     'Percentage Calculator | FastToolKits',
-    'Free percentage calculator: find what X% of a value is, what percentage one number is of another, or the percentage increase or decrease between two values.'
+    'Free percentage calculator: find what X% of a value is, what percentage one number is of another, or the percentage increase or decrease between two values.',
+    { structuredData }
   )
 
   const [mode, setMode] = useState(PERCENTAGE_MODES.OF)
@@ -75,6 +79,7 @@ function PercentageCalculatorPage() {
       }
       setErrors(initialErrors)
       setResult({ value })
+      trackToolUsage(tool)
       return
     }
 
@@ -87,6 +92,7 @@ function PercentageCalculatorPage() {
       }
       setErrors(initialErrors)
       setResult({ value })
+      trackToolUsage(tool)
       return
     }
 
@@ -98,6 +104,7 @@ function PercentageCalculatorPage() {
     }
     setErrors(initialErrors)
     setResult({ value, direction })
+    trackToolUsage(tool)
   }
 
   const handleReset = () => {

@@ -6,8 +6,11 @@ import ToolResult from '../../components/tools/ToolResult'
 import ToolInfo from '../../components/tools/ToolInfo'
 import PillToggle from '../../components/tools/PillToggle'
 import { TIP_PRESETS, DEFAULT_TIP_PERCENT, calculateTip, formatCurrency } from '../../tools/tip/tipCalculator'
+import { buildToolStructuredData } from '../../utils/structuredData'
+import { trackToolUsage } from '../../utils/analytics'
 
 const tool = tools.find((item) => item.path === '/tip-calculator')
+const structuredData = buildToolStructuredData(tool)
 
 const DEFAULT_TIP_STRING = String(DEFAULT_TIP_PERCENT)
 const CUSTOM_OPTION = 'custom'
@@ -28,7 +31,8 @@ const TIP_OPTIONS = [
 function TipCalculatorPage() {
   usePageTitle(
     'Tip Calculator | FastToolKits',
-    'Free tip calculator: enter the bill amount, choose a tip percentage, and split the total between any number of people.'
+    'Free tip calculator: enter the bill amount, choose a tip percentage, and split the total evenly between any number of people. See the tip and total instantly.',
+    { structuredData }
   )
 
   const [tipSelection, setTipSelection] = useState(DEFAULT_TIP_STRING)
@@ -59,6 +63,7 @@ function TipCalculatorPage() {
 
     setErrors(initialErrors)
     setResult({ tipAmount, total, perPerson })
+    trackToolUsage(tool)
   }
 
   const handleReset = () => {

@@ -5,8 +5,11 @@ import ToolLayout from '../../layouts/ToolLayout'
 import ToolResult from '../../components/tools/ToolResult'
 import ToolInfo from '../../components/tools/ToolInfo'
 import { calculateAge, formatAge, getTodayDateInputValue } from '../../tools/age/ageCalculator'
+import { buildToolStructuredData } from '../../utils/structuredData'
+import { trackToolUsage } from '../../utils/analytics'
 
 const tool = tools.find((item) => item.path === '/age-calculator')
+const structuredData = buildToolStructuredData(tool)
 
 function createInitialFormState() {
   return { dateOfBirth: '', calculationDate: getTodayDateInputValue() }
@@ -17,7 +20,8 @@ const initialErrors = { dateOfBirth: '', calculationDate: '' }
 function AgeCalculatorPage() {
   usePageTitle(
     'Age Calculator | FastToolKits',
-    'Free age calculator: enter your date of birth to instantly find your exact age in years, months, and days as of any calculation date.'
+    'Free age calculator: enter your date of birth to instantly find your exact age in years, months, and days as of any calculation date.',
+    { structuredData }
   )
 
   const [form, setForm] = useState(createInitialFormState)
@@ -42,6 +46,7 @@ function AgeCalculatorPage() {
 
     setErrors(initialErrors)
     setResult({ years, months, days })
+    trackToolUsage(tool)
   }
 
   const handleReset = () => {

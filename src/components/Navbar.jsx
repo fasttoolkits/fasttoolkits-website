@@ -12,12 +12,12 @@ function Navbar() {
         </Link>
 
         <nav aria-label="Primary">
-          <a
-            href="#tools"
+          <Link
+            to="/#tools"
             className="rounded-md px-3 py-2 text-sm font-medium text-base-content transition-colors hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
           >
             All Tools
-          </a>
+          </Link>
         </nav>
       </div>
     </header>

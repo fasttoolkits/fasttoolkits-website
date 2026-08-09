@@ -3,7 +3,18 @@ import ToolCard from '../ToolCard'
 
 // Tool pages that exist today. Add a path here when its route is built so
 // Related Tools can safely link to it without producing a 404.
-const AVAILABLE_TOOL_PATHS = ['/bmi-calculator', '/age-calculator', '/tip-calculator', '/percentage-calculator']
+const AVAILABLE_TOOL_PATHS = [
+  '/bmi-calculator',
+  '/age-calculator',
+  '/tip-calculator',
+  '/percentage-calculator',
+  '/word-counter',
+  '/password-generator',
+  '/unit-converter',
+  '/qr-code-generator',
+  '/color-picker',
+  '/loan-calculator',
+]
 
 function RelatedTools({ currentPath, category, limit = 3 }) {
   const candidates = tools.filter(
