@@ -1,4 +1,4 @@
-# AGENTS.md — FastToolKits
+# AGENTS.md: FastToolKits
 
 This file gives instructions to AI coding agents (Claude Code or any other
 AI assistant) working on this project. Read this file before touching any code.
@@ -31,7 +31,7 @@ If something is unclear, ask before making significant changes.
 2. Read PROJECT.md
 3. Check the Current Project Status section in PROJECT.md
 4. Ask what the task is for this session
-5. Complete only the task given — do not change unrelated files
+5. Complete only the task given. Do not change unrelated files
 
 You do not need PROJECT.md to be pasted into the chat manually.
 Read it directly from the project folder.
@@ -48,6 +48,12 @@ Read it directly from the project folder.
 - Do not remove existing functionality when adding new features
 - Keep all changes minimal and focused on the current task
 - Do not modify PROJECT.md or AGENTS.md without explicit approval
+- Never use the em dash character in any content: UI text, headings,
+  descriptions, FAQs, tool explanations, metadata, source code strings,
+  comments, or documentation. Use commas, periods, colons, parentheses, or
+  regular hyphens instead.
+- Use plain, simple language everywhere. Visitors are not technical users.
+  Avoid marketing language, exaggerated claims, and unnecessary jargon.
 
 ### React
 - Functional components only. No class components. Ever.
@@ -85,7 +91,7 @@ Read it directly from the project folder.
 
 ### Routing
 - React Router v7 (the `react-router` package) handles all routing
-- Do not install or import `react-router-dom` — this project uses the
+- Do not install or import `react-router-dom`. This project uses the
   unified `react-router` package (v7 merged `react-router-dom` into it)
 - Every tool has its own route in App.jsx
 - URL paths are lowercase with hyphens: /bmi-calculator, /word-counter
@@ -93,8 +99,8 @@ Read it directly from the project folder.
 - Note: When the tool list grows large, routing may be refactored.
   Do not refactor routing without approval.
 
-### SEO — Required on Every Tool Page
-- Page title: "[Tool Name] — FastToolKits"
+### SEO: Required on Every Tool Page
+- Page title: "[Tool Name] | FastToolKits"
 - Meta description: 150 to 160 characters
 - H1 heading with the tool name
 - Short intro paragraph (2 to 3 sentences with natural keywords)

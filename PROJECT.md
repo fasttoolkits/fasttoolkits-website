@@ -1,4 +1,4 @@
-# FastToolKits — Project Document
+# FastToolKits: Project Document
 
 ## What Is FastToolKits
 
@@ -51,8 +51,8 @@ These users:
 ### Frontend
 - React (functional components, hooks only)
 - Vite (build tool)
-- React Router v7+ (the `react-router` package, client-side routing —
-  do not install `react-router-dom`; v7 merged it into `react-router`)
+- React Router v7+ (the `react-router` package, client-side routing.
+  Do not install `react-router-dom`; v7 merged it into `react-router`)
 - Tailwind CSS v4 (utility-first styling, Vite plugin integration)
 - DaisyUI (component library on top of Tailwind CSS)
 - JavaScript only (no TypeScript in Phase 1)
@@ -67,7 +67,7 @@ are added in a future phase.
 - Vercel (free tier, auto-deploys from GitHub on every push)
 
 ### Domain Registrar
-- Spaceship (fasttoolkits.com — already purchased)
+- Spaceship (fasttoolkits.com, already purchased)
 
 ### Analytics
 - Google Analytics 4
@@ -329,7 +329,7 @@ Claude Code must not invent new colors outside this system without approval.
 ## SEO Strategy
 
 ### Every Tool Page Must Have
-- Unique page title: "[Tool Name] — FastToolKits"
+- Unique page title: "[Tool Name] | FastToolKits"
 - Meta description: 150 to 160 characters
 - H1 heading matching the tool name
 - Short introduction paragraph with natural keywords
@@ -439,7 +439,7 @@ Live at fasttoolkits.com within ~2 minutes
 - [ ] Domain connected to Vercel
 - [ ] Design system finalized (starting colors in use; distinctive identity still pending)
 - [x] Shared layout components built (Navbar, Footer, MainLayout)
-- [x] Homepage foundation built (hero, search, category filter, tool grid — using real tool metadata)
+- [x] Homepage foundation built (hero, search, category filter, tool grid, using real tool metadata)
 - [ ] First tool built and tested
 - [ ] All 10 Phase 1 tools complete
 - [ ] Google Analytics added

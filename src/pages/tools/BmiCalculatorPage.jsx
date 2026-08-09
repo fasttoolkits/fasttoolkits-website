@@ -4,6 +4,7 @@ import tools from '../../data/tools'
 import ToolLayout from '../../layouts/ToolLayout'
 import ToolResult from '../../components/tools/ToolResult'
 import ToolInfo from '../../components/tools/ToolInfo'
+import PillToggle from '../../components/tools/PillToggle'
 import { HEIGHT_UNITS, WEIGHT_UNITS, calculateBmi } from '../../tools/bmi/bmiCalculator'
 
 const tool = tools.find((item) => item.path === '/bmi-calculator')
@@ -19,34 +20,9 @@ const initialFormState = {
 
 const initialErrors = { height: '', weight: '' }
 
-function UnitToggle({ label, options, value, onChange }) {
-  return (
-    <div role="group" aria-label={label} className="flex gap-2">
-      {options.map((option) => {
-        const isActive = value === option.value
-        return (
-          <button
-            key={option.value}
-            type="button"
-            aria-pressed={isActive}
-            onClick={() => onChange(option.value)}
-            className={`rounded-full border px-4 py-1.5 text-sm font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary ${
-              isActive
-                ? 'border-primary bg-primary text-primary-content'
-                : 'border-base-300 bg-base-100 text-base-content hover:border-primary hover:text-primary'
-            }`}
-          >
-            {option.label}
-          </button>
-        )
-      })}
-    </div>
-  )
-}
-
 function BmiCalculatorPage() {
   usePageTitle(
-    `${tool.name} — FastToolKits`,
+    `${tool.name} | FastToolKits`,
     'Free BMI calculator: enter your height and weight in metric or imperial units to instantly get your Body Mass Index and see which BMI category you fall into.'
   )
 
@@ -99,7 +75,7 @@ function BmiCalculatorPage() {
           <fieldset>
             <legend className="mb-2 text-sm font-medium text-base-content">Height</legend>
 
-            <UnitToggle
+            <PillToggle
               label="Height unit"
               value={form.heightUnit}
               onChange={handleHeightUnitChange}
@@ -177,7 +153,7 @@ function BmiCalculatorPage() {
           <fieldset>
             <legend className="mb-2 text-sm font-medium text-base-content">Weight</legend>
 
-            <UnitToggle
+            <PillToggle
               label="Weight unit"
               value={form.weightUnit}
               onChange={handleWeightUnitChange}
@@ -244,7 +220,7 @@ function BmiCalculatorPage() {
         <p>
           BMI is calculated by dividing your weight in kilograms by your height in meters
           squared: BMI = weight (kg) &divide; height (m)&sup2;. Measurements entered in feet,
-          inches, or pounds are converted to metric units before the calculation runs.
+          inches, or pounds are converted to metric units automatically.
         </p>
       </ToolInfo>
 

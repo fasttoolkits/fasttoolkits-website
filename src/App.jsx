@@ -5,6 +5,9 @@ import HomePage from './pages/HomePage'
 import NotFoundPage from './pages/NotFoundPage'
 
 const BmiCalculatorPage = lazy(() => import('./pages/tools/BmiCalculatorPage'))
+const AgeCalculatorPage = lazy(() => import('./pages/tools/AgeCalculatorPage'))
+const TipCalculatorPage = lazy(() => import('./pages/tools/TipCalculatorPage'))
+const PercentageCalculatorPage = lazy(() => import('./pages/tools/PercentageCalculatorPage'))
 
 function App() {
   return (
@@ -17,6 +20,30 @@ function App() {
             element={
               <Suspense fallback={null}>
                 <BmiCalculatorPage />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/age-calculator"
+            element={
+              <Suspense fallback={null}>
+                <AgeCalculatorPage />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/tip-calculator"
+            element={
+              <Suspense fallback={null}>
+                <TipCalculatorPage />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/percentage-calculator"
+            element={
+              <Suspense fallback={null}>
+                <PercentageCalculatorPage />
               </Suspense>
             }
           />

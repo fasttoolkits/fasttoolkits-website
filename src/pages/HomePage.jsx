@@ -9,8 +9,8 @@ const POPULAR_TOOL_NAMES = ['BMI Calculator', 'Word Counter', 'Password Generato
 
 function HomePage() {
   usePageTitle(
-    'FastToolKits — Fast, free tools for everyday life',
-    'Free online calculators and utilities for everyday life. No sign-up, no downloads — get a quick result in seconds.'
+    'FastToolKits | Fast, free tools for everyday life',
+    'Free online calculators and utilities for everyday life. No sign-up, no downloads. Get a quick result in seconds.'
   )
 
   const [searchTerm, setSearchTerm] = useState('')

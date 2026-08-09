@@ -1,21 +1,21 @@
 const tools = [
   {
     name: 'BMI Calculator',
-    description: 'Calculate your Body Mass Index from height and weight.',
+    description: 'Enter your height and weight to calculate your BMI.',
     path: '/bmi-calculator',
     category: 'Health',
     keywords: ['bmi', 'body mass index', 'health', 'weight'],
   },
   {
     name: 'Age Calculator',
-    description: 'Find your exact age in years, months, and days.',
+    description: 'Enter your date of birth to find your exact age.',
     path: '/age-calculator',
     category: 'Everyday',
     keywords: ['age', 'birthday', 'date calculator'],
   },
   {
     name: 'Tip Calculator',
-    description: 'Quickly calculate tip amounts and split the bill.',
+    description: 'Enter the bill amount to calculate the tip and split it.',
     path: '/tip-calculator',
     category: 'Everyday',
     keywords: ['tip', 'gratuity', 'bill split'],
@@ -36,7 +36,7 @@ const tools = [
   },
   {
     name: 'Percentage Calculator',
-    description: 'Calculate percentages, increases, and decreases fast.',
+    description: 'Enter two numbers to calculate a percentage, increase, or decrease.',
     path: '/percentage-calculator',
     category: 'Math',
     keywords: ['percentage', 'percent', 'math'],
