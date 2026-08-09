@@ -27,3 +27,13 @@ export function buildToolStructuredData(tool) {
     },
   }
 }
+
+export function buildWebPageStructuredData({ name, description, path }) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name,
+    description,
+    url: `${SITE_URL}${path}`,
+  }
+}

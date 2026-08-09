@@ -5,6 +5,11 @@ import MainLayout from './layouts/MainLayout'
 import HomePage from './pages/HomePage'
 import NotFoundPage from './pages/NotFoundPage'
 
+const AboutPage = lazy(() => import('./pages/AboutPage'))
+const ContactPage = lazy(() => import('./pages/ContactPage'))
+const PrivacyPolicyPage = lazy(() => import('./pages/PrivacyPolicyPage'))
+const TermsOfUsePage = lazy(() => import('./pages/TermsOfUsePage'))
+
 const BmiCalculatorPage = lazy(() => import('./pages/tools/BmiCalculatorPage'))
 const AgeCalculatorPage = lazy(() => import('./pages/tools/AgeCalculatorPage'))
 const TipCalculatorPage = lazy(() => import('./pages/tools/TipCalculatorPage'))
@@ -22,6 +27,38 @@ function App() {
       <Routes>
         <Route element={<MainLayout />}>
           <Route path="/" element={<HomePage />} />
+          <Route
+            path="/about"
+            element={
+              <Suspense fallback={null}>
+                <AboutPage />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/contact"
+            element={
+              <Suspense fallback={null}>
+                <ContactPage />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/privacy"
+            element={
+              <Suspense fallback={null}>
+                <PrivacyPolicyPage />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/terms"
+            element={
+              <Suspense fallback={null}>
+                <TermsOfUsePage />
+              </Suspense>
+            }
+          />
           <Route
             path="/bmi-calculator"
             element={

@@ -1,3 +1,6 @@
+// Static initial ordering, broad everyday usefulness and simplicity first.
+// Not based on real usage data yet. Once actual tool usage analytics
+// builds up, this order can be revisited using real numbers instead of judgment.
 const tools = [
   {
     name: 'BMI Calculator',
@@ -7,25 +10,11 @@ const tools = [
     keywords: ['bmi', 'body mass index', 'health', 'weight'],
   },
   {
-    name: 'Age Calculator',
-    description: 'Enter your date of birth to find your exact age.',
-    path: '/age-calculator',
-    category: 'Everyday',
-    keywords: ['age', 'birthday', 'date calculator'],
-  },
-  {
-    name: 'Tip Calculator',
-    description: 'Enter the bill amount to calculate the tip and split it.',
-    path: '/tip-calculator',
-    category: 'Everyday',
-    keywords: ['tip', 'gratuity', 'bill split'],
-  },
-  {
-    name: 'Word Counter',
-    description: 'Count words, characters, and sentences in your text.',
-    path: '/word-counter',
-    category: 'Writing',
-    keywords: ['word count', 'character count', 'text'],
+    name: 'Percentage Calculator',
+    description: 'Enter two numbers to calculate a percentage, increase, or decrease.',
+    path: '/percentage-calculator',
+    category: 'Math',
+    keywords: ['percentage', 'percent', 'math'],
   },
   {
     name: 'Password Generator',
@@ -35,11 +24,11 @@ const tools = [
     keywords: ['password', 'generator', 'security'],
   },
   {
-    name: 'Percentage Calculator',
-    description: 'Enter two numbers to calculate a percentage, increase, or decrease.',
-    path: '/percentage-calculator',
-    category: 'Math',
-    keywords: ['percentage', 'percent', 'math'],
+    name: 'Tip Calculator',
+    description: 'Enter the bill amount to calculate the tip and split it.',
+    path: '/tip-calculator',
+    category: 'Everyday',
+    keywords: ['tip', 'gratuity', 'bill split'],
   },
   {
     name: 'Unit Converter',
@@ -56,11 +45,18 @@ const tools = [
     keywords: ['qr code', 'generator', 'scan'],
   },
   {
-    name: 'Color Picker',
-    description: 'Pick colors and get their HEX, RGB, and HSL values.',
-    path: '/color-picker',
-    category: 'Design',
-    keywords: ['color', 'picker', 'hex', 'rgb'],
+    name: 'Word Counter',
+    description: 'Count words, characters, and sentences in your text.',
+    path: '/word-counter',
+    category: 'Writing',
+    keywords: ['word count', 'character count', 'text'],
+  },
+  {
+    name: 'Age Calculator',
+    description: 'Enter your date of birth to find your exact age.',
+    path: '/age-calculator',
+    category: 'Everyday',
+    keywords: ['age', 'birthday', 'date calculator'],
   },
   {
     name: 'Loan Calculator',
@@ -68,6 +64,13 @@ const tools = [
     path: '/loan-calculator',
     category: 'Finance',
     keywords: ['loan', 'interest', 'payment', 'finance'],
+  },
+  {
+    name: 'Color Picker',
+    description: 'Pick colors and get their HEX, RGB, and HSL values.',
+    path: '/color-picker',
+    category: 'Design',
+    keywords: ['color', 'picker', 'hex', 'rgb'],
   },
 ]
 

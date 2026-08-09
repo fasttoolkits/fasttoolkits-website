@@ -8,7 +8,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const distDir = resolve(__dirname, '../dist')
 const outputPath = resolve(distDir, 'sitemap.xml')
 
-const paths = ['/', ...tools.map((tool) => tool.path)]
+const paths = ['/', ...tools.map((tool) => tool.path), '/about', '/contact', '/privacy', '/terms']
 
 const urlEntries = paths
   .map((path) => `  <url>\n    <loc>${SITE_URL}${path}</loc>\n  </url>`)

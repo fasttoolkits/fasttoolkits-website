@@ -7,7 +7,7 @@ import ToolCard from '../components/ToolCard'
 import SearchBar from '../components/SearchBar'
 import CategoryFilter from '../components/CategoryFilter'
 
-const POPULAR_TOOL_NAMES = ['BMI Calculator', 'Word Counter', 'Password Generator', 'Unit Converter']
+const QUICK_LINK_TOOL_NAMES = ['BMI Calculator', 'Password Generator', 'Tip Calculator']
 const homeStructuredData = buildWebsiteStructuredData()
 
 function HomePage() {
@@ -26,8 +26,8 @@ function HomePage() {
 
   const categories = useMemo(() => [...new Set(tools.map((tool) => tool.category))].sort(), [])
 
-  const popularTools = useMemo(
-    () => tools.filter((tool) => POPULAR_TOOL_NAMES.includes(tool.name)),
+  const quickLinkTools = useMemo(
+    () => tools.filter((tool) => QUICK_LINK_TOOL_NAMES.includes(tool.name)),
     []
   )
 
@@ -45,7 +45,7 @@ function HomePage() {
     })
   }, [searchTerm, activeCategory])
 
-  const handlePopularSelect = (toolName) => {
+  const handleQuickLinkSelect = (toolName) => {
     setActiveCategory('All')
     setSearchTerm(toolName)
     document.getElementById('tools')?.scrollIntoView({ behavior: 'smooth' })
@@ -71,14 +71,14 @@ function HomePage() {
           <SearchBar value={searchTerm} onChange={setSearchTerm} />
         </div>
 
-        {popularTools.length > 0 && (
+        {quickLinkTools.length > 0 && (
           <div className="mx-auto mt-4 flex max-w-xl flex-wrap items-center justify-center gap-x-1 gap-y-2 text-sm">
-            <span className="mr-1 text-muted">Popular:</span>
-            {popularTools.map((tool) => (
+            <span className="mr-1 text-muted">Quick links:</span>
+            {quickLinkTools.map((tool) => (
               <button
                 key={tool.path}
                 type="button"
-                onClick={() => handlePopularSelect(tool.name)}
+                onClick={() => handleQuickLinkSelect(tool.name)}
                 className="rounded-full px-2 py-1 font-medium text-primary transition-colors hover:bg-primary/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
               >
                 {tool.name}
