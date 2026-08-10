@@ -30,8 +30,8 @@ const TIP_OPTIONS = [
 
 function TipCalculatorPage() {
   usePageTitle(
-    'Tip Calculator | FastToolKits',
-    'Free tip calculator: enter the bill amount, choose a tip percentage, and split the total evenly between any number of people. See the tip and total instantly.',
+    'Tip Calculator: Split the Bill & Calculate Gratuity | FastToolKits',
+    'Calculate how much to tip and split the bill between friends. Enter your bill amount, choose a tip percentage, and split the total between people.',
     { structuredData }
   )
 
@@ -186,10 +186,43 @@ function TipCalculatorPage() {
         </p>
       </ToolInfo>
 
-      <ToolInfo title="Choosing a tip percentage">
+      <ToolInfo title="How much should you tip?">
         <p>
-          Pick 15%, 18%, or 20% for a quick answer, or choose Custom to enter your own
+          Tipping customs vary a lot depending on where you are, so treat the following as
+          general guidance rather than a fixed rule. In the United States, restaurant service is
+          commonly tipped around 15 to 20 percent of the bill. Some bills already include a
+          service charge or automatic gratuity, especially for larger groups, so it&apos;s worth
+          checking before adding a tip on top.
+        </p>
+        <p>
+          Pick 15%, 18%, or 20% above for a quick answer, or choose Custom to enter your own
           percentage.
+        </p>
+      </ToolInfo>
+
+      <ToolInfo title="Tipping in the UK and Europe">
+        <p>
+          Tipping customs vary significantly from country to country, so there is no single
+          European standard. In the UK, tipping is generally less expected than in the US, and
+          many restaurant bills already include a service charge, so check your bill first.
+        </p>
+        <p>
+          Elsewhere in Europe, customs differ by country. Some places build a service charge
+          into the price, while others leave a small tip as optional for good service. When
+          you&apos;re unsure, it&apos;s worth checking the guidance for the specific country
+          you&apos;re in.
+        </p>
+      </ToolInfo>
+
+      <ToolInfo title="How to split a bill fairly">
+        <p>
+          This calculator splits the total evenly by dividing the bill and tip by the number of
+          people you enter. That works well when everyone ordered a similar amount.
+        </p>
+        <p>
+          If people ordered very different amounts, an even split may not feel fair. In that
+          case, you may want to add up each person&apos;s food and drinks separately before
+          applying a tip, since this calculator splits the total evenly rather than by item.
         </p>
       </ToolInfo>
 
@@ -215,6 +248,62 @@ function TipCalculatorPage() {
             <div className="collapse-content text-sm text-muted">
               Leave the number of people at 1. &quot;Each person pays&quot; will then show the
               full total: the bill plus the tip.
+            </div>
+          </details>
+
+          <details className="collapse collapse-arrow border border-base-300 bg-base-100">
+            <summary className="collapse-title text-sm font-medium text-base-content">
+              How much should I tip at a restaurant?
+            </summary>
+            <div className="collapse-content text-sm text-muted">
+              In the United States, 15 to 20 percent of the bill is common for restaurant
+              service. In many other countries, tipping is smaller or not expected at all, so
+              it&apos;s worth checking local customs before you go.
+            </div>
+          </details>
+
+          <details className="collapse collapse-arrow border border-base-300 bg-base-100">
+            <summary className="collapse-title text-sm font-medium text-base-content">
+              Do I tip on the pre-tax or post-tax amount?
+            </summary>
+            <div className="collapse-content text-sm text-muted">
+              Both approaches are used in practice. Tipping on the pre-tax amount is slightly
+              more common, but there is no universal rule, so use whichever amount you&apos;re
+              comfortable with.
+            </div>
+          </details>
+
+          <details className="collapse collapse-arrow border border-base-300 bg-base-100">
+            <summary className="collapse-title text-sm font-medium text-base-content">
+              Is tipping expected in the UK?
+            </summary>
+            <div className="collapse-content text-sm text-muted">
+              It&apos;s generally less expected than in the US. Many UK restaurant bills already
+              include a service charge, so check your bill before deciding whether to add
+              anything extra.
+            </div>
+          </details>
+
+          <details className="collapse collapse-arrow border border-base-300 bg-base-100">
+            <summary className="collapse-title text-sm font-medium text-base-content">
+              What if the service was bad?
+            </summary>
+            <div className="collapse-content text-sm text-muted">
+              Tipping is meant to reflect the service you received, so it&apos;s reasonable to
+              tip less for poor service. If a service charge is already included on the bill,
+              check whether it can be adjusted before deciding.
+            </div>
+          </details>
+
+          <details className="collapse collapse-arrow border border-base-300 bg-base-100">
+            <summary className="collapse-title text-sm font-medium text-base-content">
+              How do I split the bill when people ordered different amounts?
+            </summary>
+            <div className="collapse-content text-sm text-muted">
+              This calculator splits the total evenly between the number of people you enter. If
+              everyone ordered a different amount, you&apos;ll need to add up each person&apos;s
+              items separately before splitting, since this calculator doesn&apos;t itemise
+              individual orders.
             </div>
           </details>
         </div>

@@ -45,8 +45,8 @@ function getSliderValue(length) {
 
 function PasswordGeneratorPage() {
   usePageTitle(
-    'Password Generator | FastToolKits',
-    'Free password generator: create strong, random passwords in your browser. Choose the length and character types, then copy your password instantly.',
+    'Password Generator: Create Strong, Random Passwords | FastToolKits',
+    'Generate a strong, random password instantly. Choose your length and character options, then create a secure password directly in your browser. Free, no signup.',
     { structuredData }
   )
 
@@ -271,6 +271,35 @@ function PasswordGeneratorPage() {
         </p>
       </ToolInfo>
 
+      <ToolInfo title="What makes a password strong?">
+        <ul className="list-disc space-y-1 pl-5">
+          <li>Length matters. Longer passwords are generally harder to guess than shorter ones.</li>
+          <li>Use a different password for each account, so one leaked password does not put your other accounts at risk.</li>
+          <li>Avoid predictable patterns and personal information, such as names, birthdays, or common words.</li>
+          <li>A longer, random password generally offers stronger protection than a short one.</li>
+        </ul>
+      </ToolInfo>
+
+      <ToolInfo title="Is it safe to use this password generator?">
+        <p>
+          Yes. This generator creates your password entirely in your browser, using your
+          browser&apos;s built-in random number generator. Your password is never sent to
+          FastToolKits servers or saved anywhere.
+        </p>
+        <p>
+          Our analytics only record that the password generator was used. They do not receive
+          your generated password, its length, or which character types you chose.
+        </p>
+      </ToolInfo>
+
+      <ToolInfo title="Where should I store my passwords?">
+        <p>
+          Avoid keeping passwords in plain text files, notes apps, or written somewhere others
+          can find them. A reputable password manager can generate, store, and fill in your
+          passwords securely, so you only need to remember one master password.
+        </p>
+      </ToolInfo>
+
       <section aria-labelledby="password-faq-heading">
         <h2 id="password-faq-heading" className="text-lg font-semibold text-base-content">
           Frequently asked questions
@@ -315,6 +344,39 @@ function PasswordGeneratorPage() {
               spaces. They are combined with your chosen letter case, and any numbers or symbols
               you selected are added around them. Leave this blank for a fully random password
               instead.
+            </div>
+          </details>
+
+          <details className="collapse collapse-arrow border border-base-300 bg-base-100">
+            <summary className="collapse-title text-sm font-medium text-base-content">
+              Should I use the same password for multiple accounts?
+            </summary>
+            <div className="collapse-content text-sm text-muted">
+              It&apos;s best to use a unique password for each account. If one site is breached
+              and you reuse passwords, attackers can use the leaked password to try to access
+              your other accounts.
+            </div>
+          </details>
+
+          <details className="collapse collapse-arrow border border-base-300 bg-base-100">
+            <summary className="collapse-title text-sm font-medium text-base-content">
+              What is the difference between a password and a passphrase?
+            </summary>
+            <div className="collapse-content text-sm text-muted">
+              A password is typically a short string of random characters. A passphrase is
+              usually a sequence of random, unrelated words, which can be longer and easier to
+              remember while still being hard to guess.
+            </div>
+          </details>
+
+          <details className="collapse collapse-arrow border border-base-300 bg-base-100">
+            <summary className="collapse-title text-sm font-medium text-base-content">
+              How often should I change my passwords?
+            </summary>
+            <div className="collapse-content text-sm text-muted">
+              Strong passwords generally do not need to be changed on an arbitrary schedule.
+              Change a password immediately if you believe it has been exposed, compromised, or
+              reused on a service that had a data breach.
             </div>
           </details>
         </div>

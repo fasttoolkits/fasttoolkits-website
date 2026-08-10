@@ -25,8 +25,8 @@ const initialErrors = { height: '', weight: '' }
 
 function BmiCalculatorPage() {
   usePageTitle(
-    `${tool.name} | FastToolKits`,
-    'Free BMI calculator: enter your height and weight in metric or imperial units to instantly get your Body Mass Index and see which BMI category you fall into.',
+    'BMI Calculator: Check Your Body Mass Index | FastToolKits',
+    'Enter your height and weight to calculate your BMI instantly. See your BMI number, your weight category, and what your result means. Free, no signup.',
     { structuredData }
   )
 
@@ -216,33 +216,35 @@ function BmiCalculatorPage() {
         )}
       </div>
 
-      <p className="text-sm text-muted">
-        BMI is a general screening measure, not a medical diagnosis. Talk to a healthcare
-        provider for advice about your health.
-      </p>
+      <ToolInfo title="What do the BMI categories mean?">
+        <p>
+          These are the standard adult BMI categories. Normal weight is generally classified as
+          a healthy weight range for adults, but BMI is a screening measure, not a diagnosis, and
+          it does not provide a complete assessment of your health on its own.
+        </p>
+        <ul className="list-disc space-y-1 pl-5">
+          <li>Underweight: below 18.5</li>
+          <li>Normal weight: 18.5 to 24.9</li>
+          <li>Overweight: 25.0 to 29.9</li>
+          <li>Obesity: 30.0 and above</li>
+        </ul>
+      </ToolInfo>
 
-      <ToolInfo title="How BMI is calculated">
+      <ToolInfo title="What BMI does not tell you">
+        <p>BMI is a useful screening measure, but on its own it:</p>
+        <ul className="list-disc space-y-1 pl-5">
+          <li>Does not directly measure body fat</li>
+          <li>Cannot tell the difference between muscle and fat</li>
+          <li>May be less informative for people who are very muscular</li>
+          <li>Does not provide a complete picture of your health</li>
+        </ul>
+      </ToolInfo>
+
+      <ToolInfo title="How is BMI calculated?">
         <p>
           BMI is calculated by dividing your weight in kilograms by your height in meters
           squared: BMI = weight (kg) &divide; height (m)&sup2;. Measurements entered in feet,
           inches, or pounds are converted to metric units automatically.
-        </p>
-      </ToolInfo>
-
-      <ToolInfo title="What your result means">
-        <ul className="list-disc space-y-1 pl-5">
-          <li>Underweight: below 18.5</li>
-          <li>Normal weight: 18.5 to below 25</li>
-          <li>Overweight: 25 to below 30</li>
-          <li>Obesity: 30 or higher</li>
-        </ul>
-      </ToolInfo>
-
-      <ToolInfo title="Limitations of BMI">
-        <p>
-          BMI does not account for muscle mass, bone density, age, or sex, so it can be
-          misleading for athletes, older adults, and other groups. Use it as a general
-          screening tool alongside other health measures, not as a diagnosis.
         </p>
       </ToolInfo>
 
@@ -253,27 +255,64 @@ function BmiCalculatorPage() {
         <div className="mt-3 flex flex-col gap-2">
           <details className="collapse collapse-arrow border border-base-300 bg-base-100">
             <summary className="collapse-title text-sm font-medium text-base-content">
-              Is a lower BMI always healthier?
+              What is a healthy BMI for adults?
             </summary>
             <div className="collapse-content text-sm text-muted">
-              Not necessarily. A very low BMI can also indicate health risks. BMI is only a
-              general screening measure, so unusually high or low results are worth discussing
-              with a healthcare provider.
+              For most adults, a BMI between 18.5 and 24.9 is generally classified as a healthy
+              weight. This range is a general guideline, and BMI is only one indicator of
+              overall health.
             </div>
           </details>
 
           <details className="collapse collapse-arrow border border-base-300 bg-base-100">
             <summary className="collapse-title text-sm font-medium text-base-content">
-              Does BMI work the same way for everyone?
+              Does BMI differ for men and women?
             </summary>
             <div className="collapse-content text-sm text-muted">
-              No. BMI does not distinguish between muscle and fat, so it can overestimate body
-              fat in muscular people and underestimate it in older adults who have lost muscle
-              mass.
+              The standard adult BMI categories are generally the same for men and women. Body
+              composition can still differ between individuals, which is one reason BMI works
+              better as a general screening tool than as a precise measure.
+            </div>
+          </details>
+
+          <details className="collapse collapse-arrow border border-base-300 bg-base-100">
+            <summary className="collapse-title text-sm font-medium text-base-content">
+              Is BMI accurate for athletes or muscular people?
+            </summary>
+            <div className="collapse-content text-sm text-muted">
+              Not always. BMI cannot tell the difference between muscle and fat, so it can
+              overestimate body fat in people who are very muscular, which makes it less
+              reliable for athletes and similar groups.
+            </div>
+          </details>
+
+          <details className="collapse collapse-arrow border border-base-300 bg-base-100">
+            <summary className="collapse-title text-sm font-medium text-base-content">
+              Can I use this BMI calculator for children?
+            </summary>
+            <div className="collapse-content text-sm text-muted">
+              No. This calculator is intended for adults. Children and teenagers grow at
+              different rates, so their BMI needs to be assessed with age and sex-specific
+              charts rather than the adult categories used here.
+            </div>
+          </details>
+
+          <details className="collapse collapse-arrow border border-base-300 bg-base-100">
+            <summary className="collapse-title text-sm font-medium text-base-content">
+              What should I do if my BMI is outside the healthy range?
+            </summary>
+            <div className="collapse-content text-sm text-muted">
+              Consider talking to a qualified healthcare professional. They can look at your
+              full health picture, not just your BMI, and give advice suited to you.
             </div>
           </details>
         </div>
       </section>
+
+      <p className="text-sm text-muted">
+        This calculator is for informational purposes only and is not medical advice. Always
+        speak with a qualified healthcare provider about your health.
+      </p>
     </ToolLayout>
   )
 }

@@ -4,7 +4,7 @@
 const tools = [
   {
     name: 'BMI Calculator',
-    description: 'Enter your height and weight to calculate your BMI.',
+    description: 'Enter your height and weight to calculate your BMI and see your weight category.',
     path: '/bmi-calculator',
     category: 'Health',
     keywords: ['bmi', 'body mass index', 'health', 'weight'],
@@ -18,14 +18,14 @@ const tools = [
   },
   {
     name: 'Password Generator',
-    description: 'Generate strong, random passwords instantly.',
+    description: 'Create a strong, random password instantly by choosing your own options.',
     path: '/password-generator',
     category: 'Security',
     keywords: ['password', 'generator', 'security'],
   },
   {
     name: 'Tip Calculator',
-    description: 'Enter the bill amount to calculate the tip and split it.',
+    description: 'Enter your bill amount to calculate the tip and total, then split it between any number of people.',
     path: '/tip-calculator',
     category: 'Everyday',
     keywords: ['tip', 'gratuity', 'bill split'],
