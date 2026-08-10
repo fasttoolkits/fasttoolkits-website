@@ -72,6 +72,34 @@ const tools = [
     category: 'Design',
     keywords: ['color', 'picker', 'hex', 'rgb'],
   },
+  {
+    name: 'Text Case Converter',
+    description: 'Convert text to uppercase, lowercase, sentence case, title case, and more.',
+    path: '/text-case-converter',
+    category: 'Writing',
+    keywords: ['text case', 'uppercase', 'lowercase', 'title case', 'sentence case'],
+  },
+  {
+    name: 'JSON Formatter & Validator',
+    description: 'Format, validate, and beautify JSON, and find syntax errors quickly.',
+    path: '/json-formatter',
+    category: 'Developer',
+    keywords: ['json', 'formatter', 'validator', 'beautify', 'pretty print'],
+  },
+  {
+    name: 'Image Compressor',
+    description: 'Reduce an image file size while keeping good quality.',
+    path: '/image-compressor',
+    category: 'Images',
+    keywords: ['image compressor', 'compress image', 'reduce file size', 'jpeg', 'png', 'webp'],
+  },
+  {
+    name: 'PDF Merger',
+    description: 'Combine multiple PDF files into one document.',
+    path: '/pdf-merger',
+    category: 'PDF Tools',
+    keywords: ['pdf merger', 'combine pdf', 'merge pdf files', 'join pdf'],
+  },
 ]
 
 export default tools

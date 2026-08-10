@@ -20,6 +20,10 @@ const UnitConverterPage = lazy(() => import('./pages/tools/UnitConverterPage'))
 const QrCodeGeneratorPage = lazy(() => import('./pages/tools/QrCodeGeneratorPage'))
 const ColorPickerPage = lazy(() => import('./pages/tools/ColorPickerPage'))
 const LoanCalculatorPage = lazy(() => import('./pages/tools/LoanCalculatorPage'))
+const TextCaseConverterPage = lazy(() => import('./pages/tools/TextCaseConverterPage'))
+const JsonFormatterPage = lazy(() => import('./pages/tools/JsonFormatterPage'))
+const ImageCompressorPage = lazy(() => import('./pages/tools/ImageCompressorPage'))
+const PdfMergerPage = lazy(() => import('./pages/tools/PdfMergerPage'))
 
 function App() {
   return (
@@ -136,6 +140,38 @@ function App() {
             element={
               <Suspense fallback={null}>
                 <LoanCalculatorPage />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/text-case-converter"
+            element={
+              <Suspense fallback={null}>
+                <TextCaseConverterPage />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/json-formatter"
+            element={
+              <Suspense fallback={null}>
+                <JsonFormatterPage />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/image-compressor"
+            element={
+              <Suspense fallback={null}>
+                <ImageCompressorPage />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/pdf-merger"
+            element={
+              <Suspense fallback={null}>
+                <PdfMergerPage />
               </Suspense>
             }
           />

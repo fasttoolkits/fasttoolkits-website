@@ -14,6 +14,10 @@ const AVAILABLE_TOOL_PATHS = [
   '/qr-code-generator',
   '/color-picker',
   '/loan-calculator',
+  '/text-case-converter',
+  '/json-formatter',
+  '/image-compressor',
+  '/pdf-merger',
 ]
 
 function RelatedTools({ currentPath, category, limit = 3 }) {
