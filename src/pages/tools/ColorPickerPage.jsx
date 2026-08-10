@@ -43,8 +43,8 @@ function ColorSwatch({ hex, label, isCopied, onCopy }) {
 
 function ColorPickerPage() {
   usePageTitle(
-    'Color Picker | FastToolKits',
-    'Free color picker: pick any color and instantly get its HEX, RGB, and HSL values, plus matching shades, complementary, and analogous colors.',
+    'Color Picker: Convert HEX, RGB, and HSL Color Values | FastToolKits',
+    'Pick any color and instantly see its HEX, RGB, and HSL values, plus matching shades, a complementary color, and analogous colors. Copy any value with one click.',
     { structuredData }
   )
 
@@ -235,6 +235,24 @@ function ColorPickerPage() {
         </p>
       </ToolInfo>
 
+      <ToolInfo title="HEX, RGB, and HSL, explained">
+        <ul className="list-disc space-y-1 pl-5">
+          <li>
+            <span className="font-medium text-base-content">HEX:</span> a 6-character code like
+            #2563EB, made of three pairs of characters for red, green, and blue.
+          </li>
+          <li>
+            <span className="font-medium text-base-content">RGB:</span> the same red, green, and
+            blue amounts written as numbers from 0 to 255, like rgb(37, 99, 235).
+          </li>
+          <li>
+            <span className="font-medium text-base-content">HSL:</span> hue, saturation, and
+            lightness. It describes a color using an angle on a color wheel plus how vivid and how
+            bright it is.
+          </li>
+        </ul>
+      </ToolInfo>
+
       <ToolInfo title="What complementary and analogous mean">
         <ul className="list-disc space-y-1 pl-5">
           <li>
@@ -248,6 +266,15 @@ function ColorPickerPage() {
         </ul>
       </ToolInfo>
 
+      <ToolInfo title="Using a color value in CSS or design software">
+        <p>
+          Copy any HEX, RGB, or HSL value from this page and paste it directly into a CSS
+          property, like <code className="rounded bg-base-200 px-1 py-0.5">color: #2563EB;</code>,
+          or into the color field of most design tools. Keep in mind that sufficient contrast
+          between text and background colors matters for readability.
+        </p>
+      </ToolInfo>
+
       <section aria-labelledby="color-picker-faq-heading">
         <h2 id="color-picker-faq-heading" className="text-lg font-semibold text-base-content">
           Frequently asked questions
@@ -255,11 +282,22 @@ function ColorPickerPage() {
         <div className="mt-3 flex flex-col gap-2">
           <details className="collapse collapse-arrow border border-base-300 bg-base-100">
             <summary className="collapse-title text-sm font-medium text-base-content">
-              Can I type a 3-character hex code, like #F00?
+              What is a HEX color code?
             </summary>
             <div className="collapse-content text-sm text-muted">
-              Yes. Short hex codes like #F00 are automatically expanded to the full 6-character
-              version.
+              A HEX code represents a color using six characters after a #, like #2563EB. The
+              first two characters set the red amount, the next two set green, and the last two
+              set blue.
+            </div>
+          </details>
+
+          <details className="collapse collapse-arrow border border-base-300 bg-base-100">
+            <summary className="collapse-title text-sm font-medium text-base-content">
+              What is the difference between HEX and RGB?
+            </summary>
+            <div className="collapse-content text-sm text-muted">
+              They describe the same color in different formats. HEX uses a 6-character code, and
+              RGB writes the same red, green, and blue amounts as three numbers between 0 and 255.
             </div>
           </details>
 
@@ -270,6 +308,26 @@ function ColorPickerPage() {
             <div className="collapse-content text-sm text-muted">
               HSL stands for hue, saturation, and lightness. It describes a color using an angle
               on a color wheel plus how vivid and how bright it is.
+            </div>
+          </details>
+
+          <details className="collapse collapse-arrow border border-base-300 bg-base-100">
+            <summary className="collapse-title text-sm font-medium text-base-content">
+              How do I use a HEX color in CSS?
+            </summary>
+            <div className="collapse-content text-sm text-muted">
+              Copy the hex code and use it anywhere a CSS color is expected, for example{' '}
+              <code className="rounded bg-base-200 px-1 py-0.5">background-color: #2563EB;</code>.
+            </div>
+          </details>
+
+          <details className="collapse collapse-arrow border border-base-300 bg-base-100">
+            <summary className="collapse-title text-sm font-medium text-base-content">
+              Can I type a 3-character hex code, like #F00?
+            </summary>
+            <div className="collapse-content text-sm text-muted">
+              Yes. Short hex codes like #F00 are automatically expanded to the full 6-character
+              version.
             </div>
           </details>
         </div>

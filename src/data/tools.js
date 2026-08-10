@@ -32,7 +32,7 @@ const tools = [
   },
   {
     name: 'Unit Converter',
-    description: 'Convert between common units of measurement.',
+    description: 'Convert between units of length, weight, temperature, area, volume, and time.',
     path: '/unit-converter',
     category: 'Everyday',
     keywords: ['unit', 'conversion', 'measurement'],
@@ -46,7 +46,7 @@ const tools = [
   },
   {
     name: 'Word Counter',
-    description: 'Count words, characters, and sentences in your text.',
+    description: 'Count words, characters, sentences, paragraphs, and reading time in your text.',
     path: '/word-counter',
     category: 'Writing',
     keywords: ['word count', 'character count', 'text'],

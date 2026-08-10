@@ -19,8 +19,8 @@ const initialErrors = { dateOfBirth: '', calculationDate: '' }
 
 function AgeCalculatorPage() {
   usePageTitle(
-    'Age Calculator | FastToolKits',
-    'Free age calculator: enter your date of birth to instantly find your exact age in years, months, and days as of any calculation date.',
+    'Age Calculator: Find Your Exact Age in Years, Months & Days | FastToolKits',
+    'Enter your date of birth to calculate your exact age in years, months, and days, as of today or any date you choose. Free and instant.',
     { structuredData }
   )
 
@@ -133,11 +133,30 @@ function AgeCalculatorPage() {
         </ul>
       </ToolInfo>
 
+      <ToolInfo title="Why age calculations can differ around birthdays">
+        <p>
+          Some age calculations use an average year length, like 365.25 days, which can make an
+          age tick over a day or two before or after the actual birthday. This calculator instead
+          compares calendar dates directly, so your age in years only changes exactly on your
+          birthday, no matter how many days are in the months in between.
+        </p>
+      </ToolInfo>
+
       <section aria-labelledby="age-faq-heading">
         <h2 id="age-faq-heading" className="text-lg font-semibold text-base-content">
           Frequently asked questions
         </h2>
         <div className="mt-3 flex flex-col gap-2">
+          <details className="collapse collapse-arrow border border-base-300 bg-base-100">
+            <summary className="collapse-title text-sm font-medium text-base-content">
+              How is my age calculated?
+            </summary>
+            <div className="collapse-content text-sm text-muted">
+              By comparing your date of birth to the calculation date using calendar months and
+              days, then converting the difference into years, months, and days.
+            </div>
+          </details>
+
           <details className="collapse collapse-arrow border border-base-300 bg-base-100">
             <summary className="collapse-title text-sm font-medium text-base-content">
               Can I calculate my age on a date other than today?
@@ -155,6 +174,17 @@ function AgeCalculatorPage() {
             <div className="collapse-content text-sm text-muted">
               Leap years add an extra day to February. Using calendar dates instead of an
               average year length keeps your age accurate, even across leap years.
+            </div>
+          </details>
+
+          <details className="collapse collapse-arrow border border-base-300 bg-base-100">
+            <summary className="collapse-title text-sm font-medium text-base-content">
+              Can the calculator show my age in total months or days?
+            </summary>
+            <div className="collapse-content text-sm text-muted">
+              This calculator shows your age broken down into years, months, and days together,
+              such as &quot;30 years, 4 months, 12 days&quot;. It doesn&apos;t currently show a
+              single total in months or days.
             </div>
           </details>
         </div>

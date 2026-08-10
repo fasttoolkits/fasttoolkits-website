@@ -15,8 +15,8 @@ const structuredData = buildToolStructuredData(tool)
 
 function WordCounterPage() {
   usePageTitle(
-    'Word Counter | FastToolKits',
-    'Free word counter: paste or type your text to instantly count words, characters, sentences, paragraphs, and estimated reading time.',
+    'Word Counter: Count Words, Characters, and Reading Time | FastToolKits',
+    'Count words, characters, sentences, paragraphs, and estimated reading time in your text. Counts update instantly as you type or paste, right in your browser.',
     { structuredData }
   )
 
@@ -88,6 +88,15 @@ function WordCounterPage() {
         </ul>
       </ToolInfo>
 
+      <ToolInfo title="Common uses">
+        <ul className="list-disc space-y-1 pl-5">
+          <li>Checking an essay, article, or assignment against a word count requirement.</li>
+          <li>Keeping social media posts or captions under a character limit.</li>
+          <li>Writing meta descriptions or titles that fit within a target length.</li>
+          <li>Estimating how long a script or presentation will take to read aloud.</li>
+        </ul>
+      </ToolInfo>
+
       <section aria-labelledby="word-counter-faq-heading">
         <h2 id="word-counter-faq-heading" className="text-lg font-semibold text-base-content">
           Frequently asked questions
@@ -119,6 +128,25 @@ function WordCounterPage() {
             <div className="collapse-content text-sm text-muted">
               Reading time is estimated using an average reading speed of 200 words per minute.
               Your actual reading time may be faster or slower.
+            </div>
+          </details>
+
+          <details className="collapse collapse-arrow border border-base-300 bg-base-100">
+            <summary className="collapse-title text-sm font-medium text-base-content">
+              How are paragraphs counted?
+            </summary>
+            <div className="collapse-content text-sm text-muted">
+              A paragraph is any block of text separated from the next by a blank line. Line
+              breaks without a blank line in between are treated as the same paragraph.
+            </div>
+          </details>
+
+          <details className="collapse collapse-arrow border border-base-300 bg-base-100">
+            <summary className="collapse-title text-sm font-medium text-base-content">
+              Is there a limit to how much text I can paste in?
+            </summary>
+            <div className="collapse-content text-sm text-muted">
+              No fixed limit. You can paste in anything from a short caption to a full document.
             </div>
           </details>
         </div>

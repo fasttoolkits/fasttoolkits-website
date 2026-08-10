@@ -12,8 +12,8 @@ const structuredData = buildToolStructuredData(tool)
 
 function QrCodeGeneratorPage() {
   usePageTitle(
-    'QR Code Generator | FastToolKits',
-    'Free QR code generator: turn any text or link into a scannable QR code right in your browser, then download it as an image to share or print.',
+    'QR Code Generator: Turn Text or a Link into a QR Code | FastToolKits',
+    'Create a scannable QR code from any text or link, right in your browser. Download it as an image to print or share. Free, no signup, nothing sent to a server.',
     { structuredData }
   )
 
@@ -114,11 +114,56 @@ function QrCodeGeneratorPage() {
         </p>
       </ToolInfo>
 
+      <ToolInfo title="What is a QR code?">
+        <p>
+          A QR code is a square pattern of black and white squares that stores text, such as a
+          website link, a message, or contact details. Pointing a camera at it decodes that text
+          almost instantly, which is faster than typing a long link by hand.
+        </p>
+      </ToolInfo>
+
+      <ToolInfo title="How to scan a QR code">
+        <p>
+          Most modern phone cameras can scan a QR code without an extra app. Open your camera app,
+          point it at the code, and a notification or on-screen link should appear that you can
+          tap to open. If your camera doesn&apos;t support this, a free QR scanner app will work
+          too.
+        </p>
+      </ToolInfo>
+
+      <ToolInfo title="Where QR codes are commonly used">
+        <ul className="list-disc space-y-1 pl-5">
+          <li>Linking to a website, menu, or contact page without typing a URL.</li>
+          <li>Sharing Wi-Fi details or event information.</li>
+          <li>Printed materials like posters, packaging, and business cards.</li>
+          <li>Boarding passes and tickets.</li>
+        </ul>
+      </ToolInfo>
+
+      <ToolInfo title="Staying safe with QR codes">
+        <p>
+          Before scanning an unfamiliar QR code, especially one you find in public, check where it
+          leads before you continue. Many phones show a preview of the link before opening it.
+          Avoid entering personal information, passwords, or payment details on a page you
+          don&apos;t recognize or trust.
+        </p>
+      </ToolInfo>
+
       <section aria-labelledby="qr-faq-heading">
         <h2 id="qr-faq-heading" className="text-lg font-semibold text-base-content">
           Frequently asked questions
         </h2>
         <div className="mt-3 flex flex-col gap-2">
+          <details className="collapse collapse-arrow border border-base-300 bg-base-100">
+            <summary className="collapse-title text-sm font-medium text-base-content">
+              Is my text or link sent to a server?
+            </summary>
+            <div className="collapse-content text-sm text-muted">
+              No. The QR code is generated entirely in your browser. What you type is never sent
+              to FastToolKits servers or stored anywhere.
+            </div>
+          </details>
+
           <details className="collapse collapse-arrow border border-base-300 bg-base-100">
             <summary className="collapse-title text-sm font-medium text-base-content">
               Does the QR code expire?
@@ -136,6 +181,27 @@ function QrCodeGeneratorPage() {
             <div className="collapse-content text-sm text-muted">
               Make sure the full image is visible and not blurry, and that your link starts with
               https:// if you want it to open directly in a browser.
+            </div>
+          </details>
+
+          <details className="collapse collapse-arrow border border-base-300 bg-base-100">
+            <summary className="collapse-title text-sm font-medium text-base-content">
+              Is it safe to scan any QR code I see?
+            </summary>
+            <div className="collapse-content text-sm text-muted">
+              Treat an unfamiliar QR code the way you would an unfamiliar link. Check the address
+              your phone shows before opening it, and avoid entering sensitive information on a
+              page you don&apos;t trust.
+            </div>
+          </details>
+
+          <details className="collapse collapse-arrow border border-base-300 bg-base-100">
+            <summary className="collapse-title text-sm font-medium text-base-content">
+              Is there a limit to how much text I can encode?
+            </summary>
+            <div className="collapse-content text-sm text-muted">
+              Yes, up to {MAX_TEXT_LENGTH} characters. Longer text creates a denser QR code, which
+              can be harder for some cameras to scan.
             </div>
           </details>
         </div>

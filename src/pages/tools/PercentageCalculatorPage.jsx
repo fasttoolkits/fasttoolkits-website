@@ -44,8 +44,8 @@ const initialErrors = {
 
 function PercentageCalculatorPage() {
   usePageTitle(
-    'Percentage Calculator | FastToolKits',
-    'Free percentage calculator: find what X% of a value is, what percentage one number is of another, or the percentage increase or decrease between two values.',
+    'Percentage Calculator: Find Percentages, Increases & Decreases | FastToolKits',
+    'Calculate what X% of a number is, what percentage one number is of another, or the percent increase or decrease between two values. Free, instant, no signup.',
     { structuredData }
   )
 
@@ -338,11 +338,51 @@ function PercentageCalculatorPage() {
         </ul>
       </ToolInfo>
 
+      <ToolInfo title="Common uses for percentage calculations">
+        <ul className="list-disc space-y-1 pl-5">
+          <li>Working out a discount, like 20% off a listed price.</li>
+          <li>Checking a test or quiz score as a percentage.</li>
+          <li>Comparing sales, budgets, or other figures from one period to the next.</li>
+          <li>Figuring out how much a bill, subscription, or salary changed.</li>
+        </ul>
+      </ToolInfo>
+
       <section aria-labelledby="percentage-faq-heading">
         <h2 id="percentage-faq-heading" className="text-lg font-semibold text-base-content">
           Frequently asked questions
         </h2>
         <div className="mt-3 flex flex-col gap-2">
+          <details className="collapse collapse-arrow border border-base-300 bg-base-100">
+            <summary className="collapse-title text-sm font-medium text-base-content">
+              How do I calculate a percentage of a number?
+            </summary>
+            <div className="collapse-content text-sm text-muted">
+              Choose &quot;What is X% of Y?&quot;, enter the percentage and the value, then
+              calculate. For example, 20% of 50 is 10.
+            </div>
+          </details>
+
+          <details className="collapse collapse-arrow border border-base-300 bg-base-100">
+            <summary className="collapse-title text-sm font-medium text-base-content">
+              How do I find what percentage one number is of another?
+            </summary>
+            <div className="collapse-content text-sm text-muted">
+              Choose &quot;X is what % of Y?&quot;, enter the part and the total. For example, 15
+              out of 60 is 25%.
+            </div>
+          </details>
+
+          <details className="collapse collapse-arrow border border-base-300 bg-base-100">
+            <summary className="collapse-title text-sm font-medium text-base-content">
+              How do I calculate percentage increase or decrease?
+            </summary>
+            <div className="collapse-content text-sm text-muted">
+              Choose &quot;Increase or decrease?&quot;, enter the starting value and the new
+              value. The result shows the percentage change and whether it was an increase or a
+              decrease.
+            </div>
+          </details>
+
           <details className="collapse collapse-arrow border border-base-300 bg-base-100">
             <summary className="collapse-title text-sm font-medium text-base-content">
               Can the values be negative?

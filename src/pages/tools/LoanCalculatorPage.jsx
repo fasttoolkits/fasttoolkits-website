@@ -35,8 +35,8 @@ const initialErrors = { loanAmount: '', interestRate: '', loanTermYears: '' }
 
 function LoanCalculatorPage() {
   usePageTitle(
-    'Loan Calculator | FastToolKits',
-    'Free loan calculator: enter the loan amount, interest rate, and term to estimate your monthly payment, total payment, and total interest.',
+    'Loan Calculator: Estimate Monthly Payments and Interest | FastToolKits',
+    'Estimate your monthly loan payment, total repayment, and total interest from the loan amount, interest rate, and term. Informational only, not a lender quote.',
     { structuredData }
   )
 
@@ -200,11 +200,50 @@ function LoanCalculatorPage() {
         </p>
       </ToolInfo>
 
+      <ToolInfo title="Principal vs. interest">
+        <p>
+          The principal is the amount you borrow. Interest is the cost of borrowing it, charged
+          as a percentage of what you still owe. Each monthly payment covers some interest and
+          some principal. Early payments are weighted more toward interest, and later payments
+          pay down more principal, even though the payment amount itself stays the same.
+        </p>
+      </ToolInfo>
+
+      <ToolInfo title="How the loan term affects your payments">
+        <p>
+          A longer term spreads the same loan amount over more monthly payments, so each payment
+          is smaller. But you&apos;re also paying interest for longer, so the total interest paid
+          over the life of the loan is higher. A shorter term means larger monthly payments but
+          less interest overall.
+        </p>
+      </ToolInfo>
+
       <section aria-labelledby="loan-faq-heading">
         <h2 id="loan-faq-heading" className="text-lg font-semibold text-base-content">
           Frequently asked questions
         </h2>
         <div className="mt-3 flex flex-col gap-2">
+          <details className="collapse collapse-arrow border border-base-300 bg-base-100">
+            <summary className="collapse-title text-sm font-medium text-base-content">
+              How is the monthly payment calculated?
+            </summary>
+            <div className="collapse-content text-sm text-muted">
+              This calculator uses the standard fixed-rate amortization formula, based on the loan
+              amount, the monthly interest rate, and the number of monthly payments. It assumes
+              every payment is the same size for the full term.
+            </div>
+          </details>
+
+          <details className="collapse collapse-arrow border border-base-300 bg-base-100">
+            <summary className="collapse-title text-sm font-medium text-base-content">
+              Does a longer loan term reduce monthly payments?
+            </summary>
+            <div className="collapse-content text-sm text-muted">
+              Yes. Spreading the same loan amount over more payments lowers each individual
+              payment. The trade-off is more total interest paid over the life of the loan.
+            </div>
+          </details>
+
           <details className="collapse collapse-arrow border border-base-300 bg-base-100">
             <summary className="collapse-title text-sm font-medium text-base-content">
               What if my interest rate is 0%?
@@ -231,6 +270,16 @@ function LoanCalculatorPage() {
             </summary>
             <div className="collapse-content text-sm text-muted">
               Yes. Select Custom and enter any loan term in years.
+            </div>
+          </details>
+
+          <details className="collapse collapse-arrow border border-base-300 bg-base-100">
+            <summary className="collapse-title text-sm font-medium text-base-content">
+              Is this a loan offer or approval?
+            </summary>
+            <div className="collapse-content text-sm text-muted">
+              No. This is an estimate based on the numbers you enter, not an offer, quote, or
+              approval from a lender. A real loan may have a different rate, fees, or terms.
             </div>
           </details>
         </div>
